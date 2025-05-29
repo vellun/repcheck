@@ -1,4 +1,4 @@
-module repcheck
+module github.com/vellun/repcheck
 
 go 1.23.4
 

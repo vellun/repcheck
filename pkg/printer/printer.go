@@ -3,8 +3,8 @@ package printer
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/vellun/repcheck/pkg/structs"
 	"log"
-	"repcheck/pkg/structs"
 )
 
 type Printer interface {

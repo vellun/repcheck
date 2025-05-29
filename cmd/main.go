@@ -1,13 +1,13 @@
 package main
 
 import (
+	"github.com/vellun/repcheck/pkg/cloner"
+	"github.com/vellun/repcheck/pkg/depender"
+	"github.com/vellun/repcheck/pkg/parser"
+	"github.com/vellun/repcheck/pkg/printer"
+	"github.com/vellun/repcheck/pkg/structs"
 	"log"
 	"os"
-	"repcheck/pkg/cloner"
-	"repcheck/pkg/depender"
-	"repcheck/pkg/parser"
-	"repcheck/pkg/printer"
-	"repcheck/pkg/structs"
 
 	"github.com/spf13/cobra"
 )

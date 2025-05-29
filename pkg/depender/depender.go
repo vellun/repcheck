@@ -2,9 +2,9 @@ package depender
 
 import (
 	"encoding/json"
+	"github.com/vellun/repcheck/pkg/structs"
 	"log"
 	"os/exec"
-	"repcheck/pkg/structs"
 
 	"golang.org/x/mod/modfile"
 )
