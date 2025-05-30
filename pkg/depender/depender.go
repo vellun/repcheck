@@ -30,7 +30,7 @@ func (d *goDepender) GetDeps() ([]structs.DepInfo, bool) {
 	updatesFound := false
 
 	for _, req := range d.modFile.Require {
-		update, err := checkModuleUpdate(req.Mod.Path, req.Mod.Version)
+		update, err := getModuleUpdate(req.Mod.Path, req.Mod.Version)
 		if err != nil {
 			log.Printf("Error occured for dep %s: %v\n", req.Mod.Path, err)
 			continue
@@ -56,7 +56,7 @@ func (d *goDepender) GetDeps() ([]structs.DepInfo, bool) {
 	return deps, updatesFound
 }
 
-func checkModuleUpdate(modulePath, currentVersion string) (string, error) {
+func getModuleUpdate(modulePath, currentVersion string) (string, error) {
 	cmd := exec.Command("go", "list", "-u", "-m", "-json", modulePath)
 	output, err := cmd.Output()
 	if err != nil {

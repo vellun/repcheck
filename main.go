@@ -53,8 +53,8 @@ var rootCmd = &cobra.Command{
 			modFile.Go.Version,
 		)
 
-		depender := depender.New(modFile, noIndirectFlag)
-		deps, isUpdates := depender.GetDeps()
+		dep := depender.New(modFile, noIndirectFlag)
+		deps, isUpdates := dep.GetDeps()
 
 		pr.Print(info, deps, isUpdates)
 

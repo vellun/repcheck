@@ -19,7 +19,7 @@ func (c *DefaultPrinter) Print(info structs.ModuleInfo, deps []structs.DepInfo, 
 	fmt.Printf("Go version: %s\n", info.GoVersion)
 
 	if !isUpdates {
-		fmt.Println("\nDeps to update not found")
+		fmt.Println("\nNo deps to update")
 		return
 	}
 
@@ -45,7 +45,7 @@ func (j *JSONPrinter) Print(info structs.ModuleInfo, deps []structs.DepInfo, isU
 	}
 
 	if !isUpdates {
-		fmt.Println("\nDeps to update not found")
+		fmt.Println("\nNo deps to update")
 		return
 	}
 
