@@ -27,7 +27,7 @@ func New(modFile *modfile.File, noIndirect bool) Depender {
 
 func (d *goDepender) GetDeps() ([]structs.DepInfo, bool) {
 	var deps []structs.DepInfo
-	updatesFound := false
+	isUpdates := false
 
 	for _, req := range d.modFile.Require {
 		update, err := getModuleUpdate(req.Mod.Path, req.Mod.Version)
@@ -43,7 +43,7 @@ func (d *goDepender) GetDeps() ([]structs.DepInfo, bool) {
 			continue
 		}
 
-		updatesFound = true
+		isUpdates = true
 
 		deps = append(deps, structs.DepInfo{
 			Path:          req.Mod.Path,
@@ -53,7 +53,7 @@ func (d *goDepender) GetDeps() ([]structs.DepInfo, bool) {
 		})
 	}
 
-	return deps, updatesFound
+	return deps, isUpdates
 }
 
 func getModuleUpdate(modulePath, currentVersion string) (string, error) {

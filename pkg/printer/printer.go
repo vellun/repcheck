@@ -8,7 +8,7 @@ import (
 )
 
 type Printer interface {
-	Print(info structs.ModuleInfo, deps []structs.DepInfo, updatesFound bool)
+	Print(info structs.ModuleInfo, deps []structs.DepInfo, isUpdates bool)
 }
 
 type DefaultPrinter struct{}
